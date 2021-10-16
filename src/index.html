@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Calculator</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+         //function that display value
+         function dis(val)
+         {
+             document.getElementById("result").value+=val
+         }
+           
+         //function that evaluates the digit and return result
+         function solve()
+         {
+             let x = document.getElementById("result").value
+              if(x.includes("!")) {
+                 
+                size = x.length;
+                n = Number(x.substring(0, size-1));
+                f = 1;
+                 
+                for(i = 2; i <= n; i++)
+                    f = f*i;
+                y = f;
+                document.getElementById("result").value = y
+            }
+            else if(x.includes("isPrime")){
+                n = Number(x.substring(0,1));
+                cnt = 1;
+                for(i = 2;i <=n;i++)
+                {
+                    if(n%i == 0)
+                    {
+                       cnt++;
+                    }
+                 }
+                if(cnt > 2)
+                {
+                  document.getElementById("result").value = n + " is not prime";
+                 }
+                else
+                {
+                   document.getElementById("result").value = "Prime";
+                 }
+            }
+            else{
+             let y = eval(x)
+             document.getElementById("result").value = y
+                }
+         }
+           
+         //function that clear the display
+         function clr()
+         {
+             document.getElementById("result").value = ""
+         }
+      </script>
+</head>
+<body>
+  <main-app></main-app>
+</body>
+</html>
