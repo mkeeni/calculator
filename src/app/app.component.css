@@ -18,3 +18,7 @@
          background-color: #4CAF50; 
          color: white;
          }
+
+         .example-spacer {
+         flex: 1 1 auto;
+         }
